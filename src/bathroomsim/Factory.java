@@ -9,7 +9,7 @@ import bathroomsim.Scheduler;
 
 public class Factory {
 
-	public final static Random RND = new Random();
+	public final static Random RND = new Random(17);
 	public final static int MAX_PEOPLE_TO_PROCESS = 20;
 	
 	public static int time = 0;
