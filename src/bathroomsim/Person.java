@@ -12,9 +12,7 @@ public class Person {
 	
 	public Person() {
 		this.id = Factory.personCounter;
-		
 		this.bathroomTimeRemaining = Factory.RND.nextInt(5) + 3;
-		
 		int genderChance = Factory.RND.nextInt(100);
 		this.isMale = genderChance < 40 ? true : false;		
 		this.genderLetter = isMale ? "M" : "F";
@@ -24,11 +22,13 @@ public class Person {
 		return this.isMale;
 	}
 	
+	public boolean getDeparted() {
+		return this.departed;
+	}
+	
 	public void goPoop() {
 		this.bathroomTimeRemaining--;
-		if(this.bathroomTimeRemaining==-1) {
-			this.depart();
-		}
+		if(this.bathroomTimeRemaining==0) this.depart();
 	}
 	
 	public void arrive() {
@@ -47,14 +47,9 @@ public class Person {
 		Factory.departureCounter++;
 		System.out.println("Time = " + Factory.time + "; Person " + this.id + " (" + this.genderLetter + ") exits (depature = " + Factory.departureCounter + ")");
 	}
-	
-	public boolean getDeparted() {
-		return this.departed;
-	}
 
 	public boolean isReadyToDepart() {
-		boolean isReady = this.bathroomTimeRemaining==0;
-		return isReady;
+		return this.bathroomTimeRemaining==0;
 	}
 
 }

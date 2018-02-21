@@ -10,13 +10,12 @@ import bathroomsim.Scheduler;
 public class Factory {
 
 	public final static Random RND = new Random(17);
-	public final static int MAX_PEOPLE_TO_PROCESS = 20;
 	
 	public static int time = 0;
 	public static int menuChoice = 1;
 	public static int personCounter = 0;
 	public static int departureCounter = 0;
-	
+		
 	public static Scanner keyboard = new Scanner(System.in);
 	
 	public static Bathroom bathroom = new Bathroom();

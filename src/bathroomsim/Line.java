@@ -37,6 +37,7 @@ public class Line {
 		List<Person> nextFew = new ArrayList<Person>();
 		if (line.size()>0) nextFew.add(this.line.get(0));
 		if (line.size()>1) nextFew.add(this.line.get(1));
+		if (line.size()>2) nextFew.add(this.line.get(2));
 		return nextFew;
 	}
 

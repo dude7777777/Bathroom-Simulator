@@ -22,13 +22,6 @@ public class Bathroom {
 		setGender(gender);
 	}
 	
-	public void removePersonFromBathroom(Person p) {
-		this.bathroom.remove(p);
-		if(this.bathroom.isEmpty()) {
-			setGender(0);
-		}
-	}
-	
 	public int getBathroomSize() {
 		return this.bathroom.size();
 	}
