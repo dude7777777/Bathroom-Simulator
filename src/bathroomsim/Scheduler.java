@@ -24,7 +24,7 @@ public class Scheduler {
 
 	private void cleanUpBathroom() {
 		List<Person> people = Factory.bathroom.getBathroom();
-		List<Person> newPeople = new ArrayList();
+		List<Person> newPeople = new ArrayList<Person>();
 		for(Person p : people) {
 			if(!p.getDeparted()) {
 				newPeople.add(p);

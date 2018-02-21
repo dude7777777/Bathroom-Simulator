@@ -29,11 +29,14 @@ public class Line {
 		return this.line.isEmpty();
 	}
 	
+	public int getLineSize() {
+		return this.line.size();
+	}
+	
 	public List<Person> getNextFewPeople() {
 		List<Person> nextFew = new ArrayList<Person>();
 		if (line.size()>0) nextFew.add(this.line.get(0));
 		if (line.size()>1) nextFew.add(this.line.get(1));
-		//if (line.size()>2)nextThree.add(this.line.get(2));
 		return nextFew;
 	}
 

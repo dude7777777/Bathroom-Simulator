@@ -39,6 +39,9 @@ public class Bathroom {
 	
 	public void setBathroom(List<Person> value){
 		this.bathroom = value;
+		if(this.bathroom.isEmpty()) {
+			setGender(0);
+		}
 	}
 	
 	public void tickBathroom() {

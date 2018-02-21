@@ -1,7 +1,6 @@
 package bathroomsim;
 
 import bathroomsim.Factory;
-import bathroomsim.Bathroom;
 
 public class Person {
 
