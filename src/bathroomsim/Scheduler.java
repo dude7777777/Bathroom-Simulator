@@ -50,21 +50,29 @@ public class Scheduler {
 	
 	private void checkToAddPeopleToBathroom() {
 		if(Factory.line.getLineIsEmpty()) return;
+		
+		//Bathroom size 3
 		if(Factory.bathroom.getBathroomSize()==3) return;
 		
-		List<Person> nextFewPeople = Factory.line.getNextFewPeople();
+		List<Person> line = Factory.line.getLine();
 		
-		for(Person p : nextFewPeople) {
-			if(Factory.bathroom.getBathroomSize()==3) return;
-			
-			if(Factory.bathroom.getGender()==0) {
-				p.useFacilities();
+		//Bathroom size 0
+		if(Factory.bathroom.getBathroomSize()==0 && Factory.bathroom.getGender()==0) {
+			line.get(0).useFacilities();			
+		}
+		
+		//Bathroom size 1
+		if(Factory.bathroom.getBathroomSize()==1) {
+			// TODO bathroom size 1 algorithm, if anyone else in line is compatible add to bathroom 
+		}
+		
+		//Bathroom size 2
+		if(Factory.bathroom.getBathroomSize()==2) {
+			if(line.get(0).getIsMale() && Factory.bathroom.getGender()==1) { // checks for male compatibility
+				line.get(0).useFacilities();
 			}
-			else if(Factory.bathroom.getGender()==1 && p.getIsMale()) {
-				p.useFacilities();
-			}
-			else if(Factory.bathroom.getGender()==2 && !p.getIsMale()) {
-				p.useFacilities();	
+			else if(!line.get(0).getIsMale() && Factory.bathroom.getGender()==2) {// checks for female compatibility
+				line.get(0).useFacilities();
 			}
 		}
 	}

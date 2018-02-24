@@ -33,6 +33,10 @@ public class Line {
 		return this.line.size();
 	}
 	
+	public List<Person> getLine(){
+		return this.line;
+	}
+	
 	public List<Person> getNextFewPeople() {
 		List<Person> nextFew = new ArrayList<Person>();
 		if (line.size()>0) nextFew.add(this.line.get(0));
