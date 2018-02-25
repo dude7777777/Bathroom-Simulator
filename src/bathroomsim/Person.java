@@ -28,7 +28,7 @@ public class Person {
 	
 	public void goPoop() {
 		this.bathroomTimeRemaining--;
-		if(this.bathroomTimeRemaining==0) this.depart();
+		if(this.bathroomTimeRemaining<0) this.depart();
 	}
 	
 	public void arrive() {

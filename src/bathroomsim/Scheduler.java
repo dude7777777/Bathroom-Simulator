@@ -15,7 +15,6 @@ public class Scheduler {
 			checkToAddPeopleToBathroom();
 			Factory.bathroom.tickBathroom();
 			cleanUpBathroom();
-			checkToAddPeopleToBathroom();
 		}
 	}
 
@@ -63,7 +62,17 @@ public class Scheduler {
 		
 		//Bathroom size 1
 		if(Factory.bathroom.getBathroomSize()==1) {
-			// TODO bathroom size 1 algorithm, if anyone else in line is compatible add to bathroom 
+			// If anyone else in line is compatible add to bathroom 
+			for(Person p: line) {
+				if(p.getIsMale() && Factory.bathroom.getGender()==1) {
+					p.useFacilities();
+					break;
+				}
+				else if(!p.getIsMale() && Factory.bathroom.getGender()==2) {
+					p.useFacilities();
+					break;
+				}
+			}
 		}
 		
 		//Bathroom size 2
